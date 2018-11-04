@@ -1,0 +1,20 @@
+<p>
+  Calculate Div
+</p>
+<div *ngIf="online"> Service running</div>
+<div *ngIf="!online"> Service not running . <button  (click)= "seeOnline()" [disabled]="loading">Try connection</button></div>
+
+First Number:
+<input type="text" [(ngModel)]="div.x" [disabled]="loading" />
+<p>  </p>
+Second Number:
+<input  type="text" [(ngModel)]="div.y"  [disabled]="loading" />
+<p>
+  And ...
+</p>
+<button (click)="calculateDiv()" value="Calculate" [disabled]="loading">Calculate</button>
+{{message}}
+
+<p>
+  <a href='{{swaggerUrl}}'>{{swaggerUrl}}</a>
+</p>
