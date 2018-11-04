@@ -328,4 +328,7 @@ ASALocalRun/
 
 # MFractors (Xamarin productivity tool) working folder 
 .mfractor/
+
+#dist
 /Demo/AngSimple
+/Demo/AngularSimple/dist/AngularSimple
