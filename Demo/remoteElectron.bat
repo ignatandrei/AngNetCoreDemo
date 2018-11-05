@@ -11,6 +11,7 @@ cd AngularSimple
 call ng build --prod --build-optimizer 
 copy dist\AngularSimple\*.*  ..\ElectronSimple\
 cd..
+set ELECTRON_ENABLE_LOGGING=1
 cd ElectronSimple
-npm start
+call npm start
 cd ..

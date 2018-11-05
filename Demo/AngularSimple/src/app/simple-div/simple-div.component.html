@@ -3,7 +3,7 @@
 </p>
 
 <div *ngIf="online"> Service running</div>
-<div *ngIf="!online"> Service not running . <button  (click)= "seeOnline()" [disabled]="loading">Try connection</button></div>
+<div *ngIf="!online"> Service not running . </div>
 
 First Number:
 <input type="text" [(ngModel)]="div.x" [disabled]="loading" />
@@ -19,6 +19,7 @@ Second Number:
 <p>
   Advanced
   <input type="text" [(ngModel)]="myService.UrlAPI" [disabled]="loading" />
+  <button  (click)= "seeOnline()" [disabled]="loading">Try connection</button>
 </p>
 <p>Demos</p>
 
@@ -28,4 +29,10 @@ Second Number:
 </p>
 <p>
   https://ang-net-core.herokuapp.com/
+</p>
+<p>
+https://ignatandrei.github.io/AngNetCoreDemo/
+</p>
+<p>
+https://localhost:5001/
 </p>

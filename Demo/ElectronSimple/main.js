@@ -11,10 +11,10 @@ function createWindow () {
 
   // and load the index.html of the app.
   mainWindow.loadFile('index.html')
-
+  
   // Open the DevTools.
-  // mainWindow.webContents.openDevTools()
-
+   mainWindow.webContents.openDevTools();
+  startNetCore();
   // Emitted when the window is closed.
   mainWindow.on('closed', function () {
     // Dereference the window object, usually you would store windows
@@ -23,7 +23,30 @@ function createWindow () {
     mainWindow = null
   })
 }
-
+function startNetCore() {
+  try {
+    const path = require('path');
+    //  Run target web api server
+    var locPath = path.join(__dirname, "dist\\NetCoreSimple.exe");
+    
+    console.log("!!!!!!Start " + locPath);
+    
+    var proc = require('child_process').execFile;
+    targetWebApiProcess = proc(locPath,  {maxBuffer: 1024 * 1024 * 1000}, function(err, data) {
+      if(err){
+        console.log("!!!!Error in launching! " + err);
+         return;
+      }
+   
+      console.log("!!!!!!start ok");
+    });  
+  } 
+  catch (error) {
+    console.log('!!!!');
+    console.log('!!!!!!error' + JSON.stringify(error));
+  }
+  
+}
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
