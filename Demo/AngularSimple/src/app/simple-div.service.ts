@@ -17,8 +17,15 @@ export class SimpleDivService {
 
   constructor(private http: HttpClient) { }
 
+  private _UrlAPI: string = environment.urlAPI ;
+    get UrlAPI(): string {
+        return this._UrlAPI;
+    }
+    set UrlAPI(theUrlAPI: string) {
+        this._UrlAPI = theUrlAPI;
+    }
   public Ping(): Observable<string> {
-    const url = environment.urlAPI + '/api/simplediv/ping' ;
+    const url = this.UrlAPI + '/api/simplediv/ping' ;
 
     console.log(url);
     return this.http.get(url, { responseType: 'text' })
@@ -30,7 +37,7 @@ export class SimpleDivService {
   }
   public MakeDivPOST(s: MyDiv): Observable<KeyValue<string, number> > {
 
-    const url = environment.urlAPI + '/api/simpleDiv/DivAsPOST' ;
+    const url = this.UrlAPI + '/api/simpleDiv/DivAsPOST' ;
     console.log(url);
 
     const json = JSON.stringify(s);

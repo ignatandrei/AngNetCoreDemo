@@ -15,11 +15,13 @@ namespace NetCoreSimple.Controllers
         [HttpGet]
         public string Ping()
         {
+            Console.WriteLine(nameof(Ping));
             return "pong";
         }
         [HttpPost]
         public async Task<ActionResult< KeyValuePair<string, int>>> DivAsPOST([FromBody] MyDiv mysum)
         {
+            Console.WriteLine(nameof(DivAsPOST));
             try
             {
                 var imp = new MyImportantClass();

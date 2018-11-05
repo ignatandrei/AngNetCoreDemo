@@ -1,6 +1,7 @@
 <p>
   Calculate Div
 </p>
+
 <div *ngIf="online"> Service running</div>
 <div *ngIf="!online"> Service not running . <button  (click)= "seeOnline()" [disabled]="loading">Try connection</button></div>
 
@@ -16,5 +17,6 @@ Second Number:
 {{message}}
 
 <p>
-  <a href='{{swaggerUrl}}'>{{swaggerUrl}}</a>
+  Advanced
+  <input type="text" [(ngModel)]="myService.UrlAPI" [disabled]="loading" />
 </p>

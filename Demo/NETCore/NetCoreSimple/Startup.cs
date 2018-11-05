@@ -42,7 +42,9 @@ namespace NetCoreSimple
             }
             app.UseCors(builder =>
                     builder
-                    .WithOrigins("https://ignatandrei.github.io")
+                    .WithOrigins(
+                        "https://ignatandrei.github.io"
+                        , "https://localhost:5001/")
                     .AllowAnyHeader()
                     .AllowAnyMethod()                   
                     //.AllowAnyOrigin()

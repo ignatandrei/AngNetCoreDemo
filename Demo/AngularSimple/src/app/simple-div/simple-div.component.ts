@@ -15,7 +15,7 @@ export class SimpleDivComponent implements OnInit {
   public message: string;
   public loading: boolean;
 
-  constructor(private myService: SimpleDivService) {}
+  constructor(public myService: SimpleDivService) {}
 
   ngOnInit() {
     this.div.x = 15;
