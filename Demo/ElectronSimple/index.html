@@ -1,19 +1,26 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Hello World!</title>
-  </head>
-  <body>
-    <h1>Hello World!</h1>
-    <!-- All of the Node.js APIs are available in this renderer process. -->
-    We are using Node.js <script>document.write(process.versions.node)</script>,
-    Chromium <script>document.write(process.versions.chrome)</script>,
-    and Electron <script>document.write(process.versions.electron)</script>.
+<!doctype html>
+<html lang="en">
 
-    <script>
-      // You can also require other files to run in this process
-      require('./renderer.js')
-    </script>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <title>AngularSimple</title>
+  <!-- <base href="/"> -->
+  <script>
+    var isCordovaApp = !!window.cordova;
+    var hrefApp = ".";
+    if (!isCordovaApp) {
+      var baseHref = window.location.href.split('/');
+      baseHref.pop();
+      hrefApp = baseHref.join('/') + '/';
+    }
+    document.write('<base href="' + hrefApp + '" />');
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="stylesheet" href="styles.5f175451ae854810fe6d.css"></head>
+
+<body>
+  <app-root></app-root>
+<script type="text/javascript" src="runtime.ec2944dd8b20ec099bf3.js"></script><script type="text/javascript" src="polyfills.c6871e56cb80756a5498.js"></script><script type="text/javascript" src="main.ee416d530c74c2233522.js"></script></body>
+
 </html>
