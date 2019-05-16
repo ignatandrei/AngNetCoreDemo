@@ -44,7 +44,8 @@ namespace NetCoreSimple
                     builder
                     .WithOrigins(
                         "https://ignatandrei.github.io"
-                        , "https://localhost:5001/")
+                        , "https://localhost:5001/"
+                        , "http://localhost:5000")
                     .AllowAnyHeader()
                     .AllowAnyMethod()                   
                     //.AllowAnyOrigin()
