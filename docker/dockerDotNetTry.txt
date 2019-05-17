@@ -1,0 +1,10 @@
+FROM mcr.microsoft.com/dotnet/core/sdk:2.1
+RUN dotnet tool install --global dotnet-try
+ENV PATH="${PATH}:/root/.dotnet/tools" 
+RUN mkdir -p /app/dockertest
+WORKDIR /app/dockertest
+#COPY dockertest.csproj . 
+#RUN dotnet restore ./dockertest.csproj 
+EXPOSE 80/tcp
+CMD ["dotnet-try", "demo"] 
+
