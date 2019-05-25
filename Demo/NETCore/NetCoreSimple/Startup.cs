@@ -42,13 +42,13 @@ namespace NetCoreSimple
             }
             app.UseCors(builder =>
                     builder
-                    .WithOrigins(
-                        "https://ignatandrei.github.io"
-                        , "https://localhost:5001/"
-                        , "http://localhost:5000")
+                    //.WithOrigins(
+                    //    "https://ignatandrei.github.io"
+                    //    , "https://localhost:5001"
+                    //    , "http://localhost:5000")
                     .AllowAnyHeader()
                     .AllowAnyMethod()                   
-                    //.AllowAnyOrigin()
+                    .AllowAnyOrigin()
                     );
             app.UseDefaultFiles();
             app.UseStaticFiles();
